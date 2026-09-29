@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Vaanar Tales — Small Vaanars, Big Adventures. A family of monkeys, a treehouse in a temple valley and a small yellow plane. Meet the family, explore the valley, watch the storyboard, read Vaanar News and play the games.">
+<meta property="og:title" content="Vaanar Tales">
+<meta property="og:description" content="Small Vaanars, Big Adventures — the official site for Kayhan Entertainment's Vaanar Tales.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/keyart.webp">
+<meta name="theme-color" content="#FFB300">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%92%3C/text%3E%3C/svg%3E">
+<style>
+  html{color-scheme:light}
+  body{margin:0;font:14px system-ui,-apple-system,"Segoe UI",sans-serif;background:#fff}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<title>Vaanar Tales</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+  :root{
+    --white:#FFFFFF;
+    --mist:#F3F8FC;
+    --line:#DDE8F0;
+    --ink:#12354F;
+    --muted:#5C7183;
+    --sun:#FFB300;
+    --sun-deep:#E89100;
+    --kumkum:#E0492C;
+    --leaf:#33A05E;
+    --sky:#1C93CE;
+    --sky-deep:#0F5A85;
+    --r:26px;
+    --lift:0 14px 30px -18px rgba(18,53,79,.55);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{
+    margin:0;background:var(--white);color:var(--ink);
+    font-family:Nunito,"Segoe UI",system-ui,sans-serif;font-size:17px;line-height:1.6;
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;height:auto}
+  h1,h2,h3{font-family:"Baloo 2",Nunito,system-ui,sans-serif;font-weight:800;line-height:1.05;margin:0;text-wrap:balance}
+  p{margin:0}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:20px;position:relative}
+  .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--kumkum)}
+  .band{padding-block:78px;position:relative}
+  .band-mist{background:var(--mist)}
+  .band-sky{background:linear-gradient(170deg,#2AA6E0 0%,var(--sky) 55%,#1780B6 100%);color:#fff}
+  .band-sky .eyebrow{color:#FFE49B}
+  .lede{font-size:1.06rem;color:var(--muted);max-width:62ch}
+  .band-sky .lede{color:rgba(255,255,255,.9)}
+  h2{font-size:clamp(2rem,5vw,3.1rem)}
+  .head{display:flex;flex-direction:column;gap:10px;margin-bottom:36px}
+
+  /* ---------- nav ---------- */
+  .nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-bottom:2px solid var(--line)}
+  .nav-in{max-width:var(--maxw);margin-inline:auto;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px;font-family:"Baloo 2",sans-serif;font-weight:800;
+    font-size:1.15rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+  .prop{transform-origin:10.5px 12px;animation:spin 2.2s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .nav-links{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+  .nav-links a{font-weight:700;font-size:.92rem;text-decoration:none;padding:7px 12px;border-radius:999px;white-space:nowrap}
+  .nav-links a:hover{background:var(--sun);color:#12354F}
+  .score{display:flex;align-items:center;gap:7px;font-weight:800;font-size:.85rem;background:#FFF4D6;
+    color:var(--sun-deep);border:2px solid #FFE09A;border-radius:999px;padding:5px 12px 5px 9px;white-space:nowrap}
+  .score.pop{animation:pop .45s ease}
+  @keyframes pop{40%{transform:scale(1.22) rotate(-4deg)}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;isolation:isolate;overflow:hidden;background:#0E2E45}
+  .hero img.keyart{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;z-index:-2;
+    animation:drift 26s ease-in-out infinite alternate}
+  @keyframes drift{to{transform:scale(1.07) translate3d(-1.5%,-1%,0)}}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(178deg,rgba(6,30,46,.55) 0%,rgba(6,30,46,.18) 40%,rgba(6,30,46,.88) 100%)}
+  .hero-in{max-width:var(--maxw);margin-inline:auto;padding:104px 20px 76px;color:#fff;position:relative}
+  .hero h1{font-size:clamp(3rem,11vw,6.6rem);letter-spacing:.02em;text-transform:uppercase;
+    text-shadow:0 8px 0 rgba(6,30,46,.32)}
+  .hero h1 span{display:block;color:var(--sun)}
+  .tagline{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:clamp(1.1rem,3vw,1.5rem);margin-top:4px}
+  .hero p.logline{max-width:47ch;margin-top:16px;font-size:1.08rem;color:rgba(255,255,255,.93)}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1.02rem;
+    text-decoration:none;padding:13px 26px;border-radius:999px;background:var(--sun);color:#12354F;border:0;cursor:pointer;
+    box-shadow:0 6px 0 var(--sun-deep);transition:transform .12s ease,box-shadow .12s ease}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 9px 0 var(--sun-deep)}
+  .btn:active{transform:translateY(2px);box-shadow:0 3px 0 var(--sun-deep)}
+  .btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 3px rgba(255,255,255,.7)}
+  .btn.ghost:hover{box-shadow:inset 0 0 0 3px #fff}
+  .btn.plane-btn{background:var(--kumkum);color:#fff;box-shadow:0 6px 0 #A6301A}
+  .btn.plane-btn:hover{box-shadow:0 9px 0 #A6301A}
+  .facts-strip{display:flex;gap:20px;flex-wrap:wrap;margin-top:32px;font-weight:700;font-size:.86rem;
+    letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+
+  /* ---------- Kapi & Chintu at the edges ---------- */
+  .rail{position:fixed;left:0;bottom:0;width:190px;z-index:40;pointer-events:none;display:none}
+  .rail.right{left:auto;right:0}
+  .hanger{position:relative;display:block;width:180px;margin:0 0 -10px 6px;pointer-events:auto;cursor:pointer;
+    border:0;background:none;padding:0}
+  .rail.right .hanger{transform:scaleX(-1)}
+  .hopper{display:block;transform-origin:50% 100%;animation:jump 1.3s cubic-bezier(.3,.75,.45,1) infinite}
+  .rail.right .hopper{animation-delay:-.55s}
+  .hanger:hover .hopper{animation-duration:.85s}
+  .hanger.jolt .hopper{animation-duration:.62s}
+  @keyframes jump{
+    0%{transform:translateY(0) scale(1,1)}
+    12%{transform:translateY(0) scale(1.1,.86)}
+    32%{transform:translateY(-48px) scale(.94,1.09)}
+    48%{transform:translateY(-54px) scale(.97,1.04)}
+    66%{transform:translateY(0) scale(1.11,.85)}
+    80%{transform:translateY(0) scale(.98,1.03)}
+    100%{transform:translateY(0) scale(1,1)}
+  }
+  .hanger img{width:100%;filter:drop-shadow(0 14px 14px rgba(18,53,79,.3))}
+  .bubble{position:absolute;left:92%;bottom:92%;white-space:nowrap;background:#fff;color:var(--ink);
+    font-family:"Baloo 2",sans-serif;font-weight:700;font-size:.92rem;padding:8px 14px;border-radius:16px;
+    border:3px solid var(--ink);opacity:0;transform:translateY(6px) scale(.8);transform-origin:0 100%;
+    transition:opacity .18s ease,transform .18s ease;pointer-events:none}
+  .rail.right .bubble{left:auto;right:92%;transform:scaleX(-1) translateY(6px) scale(.8);transform-origin:100% 100%}
+  .hanger.talk .bubble{opacity:1;transform:translateY(0) scale(1)}
+  .rail.right .hanger.talk .bubble{transform:scaleX(-1) translateY(0) scale(1)}
+  @media (min-width:1340px){.rail{display:block}}
+
+  /* ---------- the plane crossing the page ---------- */
+  .flyer{position:fixed;left:0;z-index:35;pointer-events:none;will-change:transform}
+  .flyer .swing{animation:sway 3.1s ease-in-out infinite}
+  .flyer img{width:190px;filter:drop-shadow(0 12px 14px rgba(18,53,79,.22))}
+  .flyer.ltr img{transform:scaleX(-1)}
+  @keyframes sway{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-16px) rotate(2deg)}}
+  .puff{position:fixed;z-index:34;border-radius:50%;pointer-events:none;
+    background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.95),rgba(176,201,219,.55) 60%,rgba(176,201,219,0) 72%);
+    animation:puff 2.6s ease-out forwards}
+  @keyframes puff{
+    0%{opacity:.85;transform:translate(0,0) scale(.5)}
+    100%{opacity:0;transform:translate(var(--dx,-30px),-42px) scale(3.4)}
+  }
+
+
+
+  /* ---------- Vaanar News ---------- */
+  .newspage{position:fixed;inset:0;z-index:80;overflow:auto;background:#FFFDF7;color:#16303F}
+  .newsbar{position:sticky;top:0;z-index:3;background:#16303F;color:#fff;
+    display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:12px 20px}
+  .masthead{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:.06em;
+    text-transform:uppercase;margin-right:auto;display:flex;align-items:baseline;gap:10px}
+  .masthead small{font-family:Nunito,sans-serif;font-size:.72rem;letter-spacing:.16em;color:#FFC93C;font-weight:700}
+  .newsbar .backbtn{background:var(--sun);color:#16303F;box-shadow:0 5px 0 var(--sun-deep)}
+  .chips{display:flex;gap:7px;flex-wrap:wrap;padding:14px 20px 0;max-width:1120px;margin-inline:auto}
+  .chip{cursor:pointer;border:2px solid #D9E4EA;background:#fff;color:#16303F;border-radius:999px;
+    padding:6px 15px;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:.9rem}
+  .chip:hover{border-color:var(--sun)}
+  .chip.on{background:#16303F;color:#fff;border-color:#16303F}
+  .newswrap{max-width:1120px;margin:0 auto;padding:22px 20px 60px}
+  .deskline{font-size:.74rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#A2AEB6;margin-bottom:16px}
+  .morebtn{display:block;margin:38px auto 0;cursor:pointer;border:3px solid #16303F;background:#fff;color:#16303F;
+    border-radius:999px;padding:13px 30px;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1rem}
+  .morebtn:hover{background:var(--sun);border-color:var(--sun)}
+  .lead-wrap{margin-bottom:34px;padding-bottom:30px;border-bottom:3px solid #E7DFCE}
+  .story{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit}
+  .story-copy{display:flex;flex-direction:column;gap:6px}
+  .story .kicker,.story .hed,.story .sell,.story .byline{display:block}
+  .story-pic{position:relative;display:block;overflow:hidden;border-radius:14px;background:#EDE6D8;border:1px solid #E0D7C4}
+  .when{position:absolute;left:10px;bottom:10px;background:rgba(22,48,63,.86);color:#FFD98A;
+    font-family:"Baloo 2",sans-serif;font-weight:700;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;
+    padding:4px 11px;border-radius:999px;backdrop-filter:blur(2px)}
+  .when.flat{position:static;background:none;color:#C0341A;padding:0;font-size:inherit;letter-spacing:.06em;backdrop-filter:none}
+  .story-pic img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s ease}
+  .story:hover .story-pic img{transform:scale(1.045)}
+  .story .kicker{font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#C0341A}
+  .story .hed{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.3rem;line-height:1.12;text-wrap:balance}
+  .story:hover .hed{text-decoration:underline;text-underline-offset:3px}
+  .story .sell{font-size:.95rem;color:#4E6473}
+  .story .byline{font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;font-weight:700;color:#8C9BA5}
+  .story.lead{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;align-items:center}
+  .story.lead .hed{font-size:clamp(1.9rem,3.6vw,2.9rem)}
+  .story.lead .sell{font-size:1.1rem}
+  .story.lead .story-pic img{aspect-ratio:3/2}
+  .story-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:30px 26px}
+  .story-grid.small{grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
+  .piece{max-width:720px;margin-inline:auto}
+  .piece h1{font-size:clamp(2rem,5vw,3.2rem);margin-top:6px}
+  .piece .kicker{font-size:.74rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#C0341A}
+  .piece .sell.big{font-size:1.2rem;color:#3F5866;margin-top:12px;font-weight:600}
+  .piece .byline{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:#8C9BA5;
+    margin-top:14px;padding-bottom:16px;border-bottom:2px solid #E7DFCE}
+  .piece figure{margin:22px 0 6px}
+  .piece figure .story-pic{border-radius:16px}
+  .piece figure img{aspect-ratio:auto}
+  .piece figure img{width:100%;border-radius:16px;border:1px solid #E0D7C4}
+  .piece figcaption{font-size:.82rem;color:#8C9BA5;margin-top:8px;font-style:italic}
+  .piece p{margin-top:16px;font-size:1.06rem;line-height:1.72}
+  .piece p.first-after{border-left:4px solid var(--sun);padding-left:16px}
+  .endmark{margin-top:24px!important;font-family:"Baloo 2",sans-serif;font-weight:700;color:#C0341A}
+  .more{max-width:1120px;margin:46px auto 0;padding-top:26px;border-top:3px solid #E7DFCE}
+  .more h2{font-size:1.5rem;margin-bottom:18px}
+  .backlink{display:inline-block;margin-top:26px;font-family:"Baloo 2",sans-serif;font-weight:700;color:#16303F}
+  @media (max-width:720px){
+    .story.lead{grid-template-columns:1fr}
+    .masthead{font-size:1.2rem}
+  }
+
+  /* ---------- the game ---------- */
+  .door-game{background:linear-gradient(160deg,#FFE9A8,#FFD166);border-color:#F2B705}
+  .door-game span{color:#7A5A00}
+  .door-game em{color:#B4431F}
+  .gamepage{position:fixed;inset:0;z-index:80;overflow:auto;
+    background:linear-gradient(#8FD8FF 0%,#CDEEFF 45%,#EAF8FF 100%)}
+  .gamepage[hidden]{display:none!important}
+  .gamebar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:12px 20px;background:#fff;
+    border-bottom:3px solid var(--line);position:sticky;top:0;z-index:3}
+  .gamebar h2{font-size:1.5rem;margin-right:auto}
+  .backbtn{border:0;cursor:pointer;border-radius:999px;padding:9px 18px;font-family:"Baloo 2",sans-serif;
+    font-weight:700;font-size:.95rem;background:var(--sky);color:#fff;box-shadow:0 5px 0 var(--sky-deep)}
+  .backbtn:active{transform:translateY(2px);box-shadow:0 3px 0 var(--sky-deep)}
+  .tally{display:flex;align-items:center;gap:14px;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1.05rem}
+  .tally b{font-size:1.5rem;color:var(--kumkum)}
+  .bumps{font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .gamebar #gFinish{background:var(--leaf)}
+  .gamebar #gFinish{box-shadow:0 5px 0 #247A46}
+  .stagewrap{max-width:980px;margin:20px auto 0;padding-inline:16px;position:relative}
+  #gCanvas{width:100%;height:auto;display:block;border-radius:var(--r);border:4px solid var(--ink);
+    box-shadow:0 16px 0 -6px rgba(18,53,79,.25);touch-action:none;background:#9BDDFF}
+  .gcard{position:absolute;inset:16px;margin:auto;display:grid;place-content:center;justify-items:center;gap:14px;
+    text-align:center;background:rgba(10,38,58,.82);color:#fff;border-radius:var(--r);padding:26px;max-width:560px;
+    max-height:86%}
+  .gcard[hidden]{display:none!important}
+  .gcard h3{font-size:2rem}
+  .gcard p{max-width:42ch;color:rgba(255,255,255,.9)}
+  .gbig{border:0;cursor:pointer;border-radius:999px;padding:15px 34px;font-family:"Baloo 2",sans-serif;font-weight:700;
+    font-size:1.2rem;background:var(--sun);color:#12354F;box-shadow:0 7px 0 var(--sun-deep)}
+  .gbig:active{transform:translateY(3px);box-shadow:0 4px 0 var(--sun-deep)}
+  .howto{max-width:980px;margin:16px auto 40px;padding-inline:16px;color:#0F4463;font-weight:600;text-align:center}
+  @media (max-width:600px){.gamebar h2{width:100%;order:3;margin:0}}
+
+
+  .gamebar .alt{background:var(--kumkum);box-shadow:0 5px 0 #A6301A}
+  .levels{display:flex;gap:8px;flex-wrap:wrap}
+  .lvl{display:flex;flex-direction:column;align-items:center;line-height:1.05;cursor:pointer;border:2px solid var(--line);
+    background:#fff;color:var(--ink);border-radius:16px;padding:6px 14px;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:.95rem}
+  .lvl small{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .lvl.on{background:var(--sun);border-color:var(--sun-deep);box-shadow:0 4px 0 var(--sun-deep)}
+  .lvl.on small{color:#8A5A00}
+  .bestlabel{font-size:.85rem;color:var(--muted);font-weight:700}
+  .picker{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;
+    max-width:980px;margin:26px auto;padding-inline:16px}
+  .pick{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;cursor:pointer;
+    border:3px solid var(--ink);border-radius:var(--r);padding:18px 20px 20px;font:inherit;color:var(--ink);
+    box-shadow:0 10px 0 -2px rgba(18,53,79,.25);transition:transform .14s ease}
+  .pick:hover{transform:translateY(-5px)}
+  .pick strong{font-family:"Baloo 2",sans-serif;font-size:1.45rem}
+  .pick span{font-size:.95rem;color:#3B5468}
+  .pick em{font-style:normal;font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#8A3E1F}
+  .pick-art{display:flex;align-items:flex-end;gap:6px;height:96px;margin-bottom:2px}
+  .pick-art img{height:96px;width:auto;filter:drop-shadow(0 8px 8px rgba(18,53,79,.25))}
+  .pick-art img:last-child{height:78px}
+  .pick-1{background:linear-gradient(160deg,#FFE9A8,#FFCF54)}
+  .pick-2{background:linear-gradient(160deg,#BFE8FF,#7FD0F5)}
+  .pick-3{background:linear-gradient(160deg,#CFF3D8,#8FDFA6)}
+  .crew{display:flex;align-items:center;gap:4px;justify-content:center;margin-top:12px;
+    font-family:"Baloo 2",sans-serif;font-weight:700;color:#0F4463}
+  .crew img{height:40px;width:auto}
+  .crew span{margin-left:8px;font-size:.9rem}
+
+  /* ---------- bananas ---------- */
+  .nana{position:absolute;border:0;background:none;padding:6px;cursor:pointer;z-index:12;
+    animation:bob 3.4s ease-in-out infinite;line-height:0}
+  .nana:hover{transform:scale(1.18) rotate(-8deg)}
+  .nana.gone{animation:zoom .5s ease forwards;pointer-events:none}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-9px) rotate(6deg)}}
+  @keyframes zoom{to{transform:translateY(-70px) scale(.2) rotate(140deg);opacity:0}}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(160%);z-index:90;
+    opacity:0;visibility:hidden;pointer-events:none;
+    background:var(--leaf);color:#fff;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1.05rem;
+    padding:14px 26px;border-radius:999px;box-shadow:var(--lift);transition:transform .45s cubic-bezier(.2,1.4,.5,1);
+    max-width:88vw;text-align:center}
+  .toast.on{transform:translateX(-50%) translateY(0);opacity:1;visibility:visible}
+
+  /* paper plane */
+  .flier{position:fixed;left:-120px;z-index:70;pointer-events:none;animation:fly 3.6s linear forwards}
+  @keyframes fly{
+    0%{transform:translate(0,0) rotate(-6deg)}
+    35%{transform:translate(40vw,-14vh) rotate(8deg)}
+    70%{transform:translate(75vw,10vh) rotate(-10deg)}
+    100%{transform:translate(115vw,-6vh) rotate(4deg)}
+  }
+
+  /* ---------- doors ---------- */
+  .doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:20px}
+  .door{display:flex;flex-direction:column;gap:6px;text-decoration:none;background:var(--white);
+    border:2px solid var(--line);border-radius:var(--r);padding:24px;transition:transform .16s ease,box-shadow .16s ease}
+  .door:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:var(--lift);border-color:var(--sun)}
+  .door strong{font-family:"Baloo 2",sans-serif;font-size:1.4rem}
+  .door span{color:var(--muted);font-size:.95rem}
+  .door em{font-style:normal;font-weight:700;color:var(--kumkum);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+
+  /* ---------- family ---------- */
+  .family{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:20px}
+  .mate{appearance:none;border:0;background:none;cursor:pointer;padding:0;display:flex;flex-direction:column;
+    align-items:center;gap:10px;color:inherit;font:inherit;position:relative}
+  .mate-disc{width:100%;aspect-ratio:1;border-radius:50%;background:var(--mate);display:grid;place-items:end center;
+    overflow:hidden;box-shadow:0 10px 0 rgba(8,50,78,.28);transition:transform .18s cubic-bezier(.3,1.5,.5,1)}
+  .mate-disc img{width:auto;height:94%;object-fit:contain;filter:drop-shadow(0 6px 6px rgba(0,0,0,.28))}
+  .mate:hover .mate-disc,.mate:focus-visible .mate-disc{transform:translateY(-10px) rotate(-3deg) scale(1.04)}
+  .mate-name{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.3rem;color:#fff}
+  .mate-role{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-top:-8px}
+  .say{position:absolute;top:-10px;left:50%;transform:translate(-50%,8px) scale(.7);opacity:0;
+    background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:16px;padding:6px 13px;
+    font-family:"Baloo 2",sans-serif;font-weight:700;font-size:.85rem;white-space:nowrap;pointer-events:none;
+    transition:opacity .18s ease,transform .18s ease;z-index:5;max-width:200px}
+  .mate:hover .say,.mate:focus-visible .say{opacity:1;transform:translate(-50%,0) scale(1)}
+  .hint{margin-top:28px;font-size:.95rem;color:rgba(255,255,255,.8)}
+
+  dialog{border:0;padding:0;background:transparent;max-width:min(940px,94vw)}
+  dialog::backdrop{background:rgba(8,40,62,.7)}
+  .card{background:var(--white);color:var(--ink);border-radius:var(--r);overflow:auto;max-height:88vh;
+    border:3px solid var(--ink);position:relative}
+  .closer{position:absolute;top:12px;right:12px;z-index:2;border:0;cursor:pointer;width:42px;height:42px;
+    border-radius:50%;background:var(--kumkum);color:#fff;font-size:1.35rem;line-height:1;font-weight:700}
+  .closer:hover{transform:scale(1.08)}
+  .sheetwrap{background:var(--mate,var(--mist));padding:6px}
+  .sheet{width:100%;height:auto;border-radius:18px;background:#F7F1E4}
+  .sheetcopy{padding:26px 28px 30px;display:flex;flex-direction:column;gap:12px}
+  .sheetcopy h3{font-size:2.2rem}
+  .facts{display:grid;grid-template-columns:minmax(96px,150px) 1fr;gap:8px 18px;margin:6px 0 0}
+  .facts dt{font-weight:700;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--kumkum);padding-top:3px}
+  .facts dd{margin:0}
+
+  /* ---------- valley ---------- */
+  .valley-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+  .mapshot{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:26px;align-items:center}
+  .mapshot img{border-radius:var(--r);border:3px solid var(--line);box-shadow:var(--lift)}
+  .place{background:var(--white);border:2px solid var(--line);border-radius:var(--r);overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .16s ease,box-shadow .16s ease}
+  .place:hover{transform:translateY(-6px);box-shadow:var(--lift);border-color:var(--leaf)}
+  .place img{aspect-ratio:16/9;object-fit:cover;width:100%;transition:transform .5s ease}
+  .place:hover img{transform:scale(1.06)}
+  .place-copy{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px}
+  .place h3{font-size:1.35rem}
+  .place p{font-size:.95rem;color:var(--muted)}
+
+  /* ---------- plane ---------- */
+  .plane{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;align-items:center}
+  .plane img{border-radius:var(--r);animation:hover 6s ease-in-out infinite}
+  @keyframes hover{0%,100%{transform:translateY(-6px)}50%{transform:translateY(6px)}}
+  .rule-list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+  .rule-list li{display:flex;gap:12px;align-items:flex-start}
+  .rule-list li::before{content:"";flex:none;width:14px;height:14px;margin-top:7px;border-radius:50%;background:var(--sun)}
+
+  /* ---------- episodes ---------- */
+  .epbar{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap}
+  .tab{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1rem;cursor:pointer;border:2px solid var(--line);
+    background:var(--white);color:var(--ink);border-radius:999px;padding:8px 18px;transition:transform .12s ease}
+  .tab:hover{transform:translateY(-2px);border-color:var(--sky)}
+  .tab.on{background:var(--sky);color:#fff;border-color:var(--sky);box-shadow:0 5px 0 var(--sky-deep)}
+  #epSearch{flex:1;min-width:190px;font:inherit;padding:11px 18px;border-radius:999px;border:2px solid var(--line);
+    background:var(--white);color:var(--ink)}
+  #epSearch::placeholder{color:var(--muted)}
+  #epCount{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:22px}
+  .epgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:22px}
+  .ep{background:var(--white);border-radius:var(--r);overflow:hidden;border:2px solid var(--line);
+    display:flex;flex-direction:column;transition:transform .16s ease,box-shadow .16s ease;animation:rise .35s ease both}
+  .ep:hover{transform:translateY(-7px) rotate(-.5deg);box-shadow:var(--lift);border-color:var(--sun)}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}}
+  .ep img{aspect-ratio:40/17;object-fit:cover;width:100%}
+  .ep-copy{padding:14px 17px 19px;display:flex;flex-direction:column;gap:5px}
+  .ep-no{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--kumkum)}
+  .ep h3{font-size:1.28rem}
+  .ep p{font-size:.93rem;color:var(--muted)}
+  .empty{grid-column:1/-1;padding:34px;text-align:center;color:var(--muted)}
+
+
+  /* ---------- storyboard on the thumbnail ---------- */
+  .thumb{position:relative;display:block;width:100%;aspect-ratio:40/17;overflow:hidden;background:var(--mist)}
+  .thumb>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .sbtag{position:absolute;left:10px;bottom:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;
+    background:rgba(12,36,55,.88);color:#fff;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:.7rem;
+    letter-spacing:.09em;text-transform:uppercase;padding:5px 11px;border-radius:999px;transition:background .2s ease}
+  .ep.hasboard:hover .sbtag{background:var(--kumkum)}
+  .ep.hasboard{cursor:pointer}
+  .openboard{align-self:flex-start;margin-top:6px;border:0;cursor:pointer;font-family:"Baloo 2",sans-serif;
+    font-weight:700;font-size:.88rem;color:var(--kumkum);background:none;padding:0;text-decoration:underline;
+    text-underline-offset:3px}
+
+  /* ---------- storyboard viewer ---------- */
+  #sbDialog{max-width:min(1180px,96vw)}
+  .sbcard{background:#0C2437;color:#fff;border-radius:var(--r);border:3px solid var(--ink);overflow:hidden;position:relative}
+  .sbtop{display:flex;align-items:baseline;gap:12px;padding:16px 60px 12px 22px;flex-wrap:wrap}
+  .sbtop h3{font-size:1.5rem}
+  .sbtop span{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--sun)}
+  .sbstage{position:relative;background:#061626;aspect-ratio:16/9;max-height:66vh}
+  .sbstage img{width:100%;height:100%;object-fit:contain}
+  .sbnav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;
+    cursor:pointer;background:rgba(255,255,255,.86);color:#12354F;font-size:1.4rem;font-weight:700;line-height:1}
+  .sbnav:hover{background:#fff}
+  .sbbig{position:absolute;inset:0;margin:auto;width:96px;height:96px;border-radius:50%;border:0;cursor:pointer;
+    background:var(--sun);color:#12354F;font-size:2.4rem;line-height:1;box-shadow:0 8px 0 var(--sun-deep);
+    display:grid;place-items:center;padding-left:6px}
+  .sbbig:hover{transform:scale(1.06)}
+  .sbbig[hidden]{display:none!important}
+  .sbtime{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:.92rem;color:rgba(255,255,255,.72);
+    font-variant-numeric:tabular-nums}
+  .sbnav.prev{left:12px}
+  .sbnav.next{right:12px}
+  .sbbar{display:flex;align-items:center;gap:14px;padding:14px 22px 20px;flex-wrap:wrap}
+  .sbplay{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;border-radius:999px;padding:10px 20px;
+    font-family:"Baloo 2",sans-serif;font-weight:700;font-size:.96rem;background:var(--sun);color:#12354F;
+    box-shadow:0 5px 0 var(--sun-deep)}
+  .sbplay:active{transform:translateY(2px);box-shadow:0 3px 0 var(--sun-deep)}
+  .sbcount{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1rem;min-width:132px;font-variant-numeric:tabular-nums}
+  #sbRange{flex:1;min-width:170px;accent-color:var(--sun)}
+
+  /* ---------- play ---------- */
+  .playhead{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+  .gamegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:20px}
+  .game{background:var(--white);border:2px solid var(--line);border-radius:var(--r);padding:24px;
+    display:flex;flex-direction:column;gap:9px;transition:transform .16s ease,box-shadow .16s ease}
+  .game:hover{transform:translateY(-5px);box-shadow:var(--lift);border-color:var(--leaf)}
+  .game h3{font-size:1.42rem}
+  .game-shot{width:calc(100% + 48px);margin:-24px -24px 6px;border-radius:var(--r) var(--r) 0 0;
+    aspect-ratio:16/9;object-fit:cover}
+  .playtools{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .playchips{display:flex;gap:8px;flex-wrap:wrap}
+  .playchips .chip{cursor:pointer;border:2px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;
+    padding:7px 16px;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:.92rem}
+  .playchips .chip:hover{border-color:var(--sun)}
+  .playchips .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .game p{font-size:.96rem;color:var(--muted)}
+  .game.picked{border-color:var(--sun);box-shadow:0 0 0 5px #FFE9AE;animation:wobble .7s ease}
+  @keyframes wobble{25%{transform:rotate(-2deg) scale(1.03)}75%{transform:rotate(2deg) scale(1.03)}}
+  .kit{font-size:.86rem;color:var(--ink);margin-top:6px;font-weight:700}
+  .kit span{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf)}
+  .props{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:30px;align-items:center;margin-top:48px}
+  .props img{border-radius:var(--r);border:2px solid var(--line)}
+
+  /* ---------- far hill ---------- */
+  .hill{position:relative;isolation:isolate;overflow:hidden}
+  .hill img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+  .hill::after{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(90deg,rgba(6,30,46,.9) 0%,rgba(6,30,46,.35) 72%)}
+  .hill-in{max-width:var(--maxw);margin-inline:auto;padding:112px 20px;color:#fff}
+  .hill h2{font-size:clamp(2.2rem,6vw,3.6rem);max-width:14ch}
+  .hill p{max-width:44ch;margin-top:14px;color:rgba(255,255,255,.92)}
+  .qmark{font-family:"Baloo 2",sans-serif;font-size:4.2rem;font-weight:800;color:var(--sun);line-height:1;
+    animation:tilt 3.2s ease-in-out infinite}
+  @keyframes tilt{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--sky-deep);color:#fff;padding-block:56px 40px}
+  .foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+  .foot h3{font-size:1.05rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sun)}
+  .foot p,.foot li{font-size:.95rem;color:rgba(255,255,255,.82)}
+  .foot ul{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .colophon{margin-top:38px;padding-top:18px;border-top:1px solid rgba(255,255,255,.24);
+    font-size:.85rem;color:rgba(255,255,255,.66);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+  :where(a,button,input):focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:10px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  @media (max-width:760px){
+    .band{padding-block:54px}
+    .hero-in{padding:72px 20px 54px}
+    .hero h1{font-size:clamp(2.6rem,15vw,4rem)}
+    .hero::after{background:linear-gradient(178deg,rgba(6,30,46,.62) 0%,rgba(6,30,46,.5) 45%,rgba(6,30,46,.92) 100%)}
+    .mapshot,.plane,.props{grid-template-columns:1fr}
+    .facts{grid-template-columns:1fr;gap:2px 0}
+    .facts dd{margin-bottom:8px}
+    .nav-links{width:100%;margin-left:0;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}
+  }
+</style>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">
+      <svg width="30" height="24" viewBox="0 0 30 24" aria-hidden="true">
+        <path d="M3 13h14l6-5h4l-3 5 3 5h-4l-6-5H3z" fill="#E0492C"/>
+        <rect class="prop" x="9" y="4" width="3" height="16" rx="1.5" fill="#1C93CE"/>
+      </svg>
+      Vaanar Tales
+    </a>
+    <nav class="nav-links">
+      <a href="#family">The family</a>
+      <a href="#valley">The valley</a>
+      <a href="#plane">The plane</a>
+      <a href="#episodes">Episodes</a>
+      <a href="#play">Play</a>
+      <a href="#news" id="newsLink">Vaanar News</a>
+      <a href="#game" id="gameLink">Game</a>
+    </nav>
+    <p class="score" id="score" title="Bholu lost six bananas on this page. Click them when you spot them.">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4c0 7 3 13 10 14 3 .4 5-1 5-2s-2-.4-4-2c-3-2.4-4.6-6-5-10-.2-1.6-2-2-3.6-1.6C6 2.8 5 3.2 5 4z" fill="#FFB300" stroke="#B57C00" stroke-width="1.2"/></svg>
+      <span id="scoreText">0 / 6 bananas</span>
+    </p>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <img class="keyart" src="img/keyart.webp" alt="The Vaanar family on the treehouse deck at golden hour" width="1400" height="783">
+  <div class="hero-in">
+    <h1>Vaanar <span>Tales</span></h1>
+    <p class="tagline">Small Vaanars, Big Adventures</p>
+    <p class="logline">A family of monkeys lives in a treehouse in an ancient temple valley with a small yellow plane that could take them anywhere — but the best adventures happen before it ever takes off.</p>
+    <div class="cta">
+      <a class="btn" href="#family">Meet the family</a>
+      <button class="btn plane-btn" id="planeBtn" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12l20-9-7 20-3-8-10-3z" fill="#fff"/></svg>
+        Throw a paper plane
+      </button>
+      <a class="btn ghost" href="#episodes">All 52 episodes</a>
+    </div>
+    <p class="facts-strip"><span>52 × 7 minutes</span><span>Ages 4–8</span><span>Made for co-viewing</span></p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="doors">
+      <a class="door" href="#family"><em>Six of them</em><strong>The family</strong><span>Two parents, three children and the langur next door who only came to deliver a banana.</span></a>
+      <a class="door" href="#episodes"><em>Season one</em><strong>Every episode</strong><span>One game, one drafted grown-up and one small lesson, fifty-two times over.</span></a>
+      <a class="door" href="#play"><em>At home</em><strong>Games to play</strong><span>Every game in the show can be played on your floor with two boxes and a tea towel.</span></a>
+      <a class="door door-game" href="#game"><em>On this page</em><strong>Catch the Banana</strong><span>Bholu keeps dropping his delivery. Help Kapi catch it before it hits the ground.</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="band band-sky" id="family">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Meet the family</p>
+      <h2>Everyone in the valley</h2>
+      <p class="lede">The children are a proper sibling system: the eldest who needs to be in charge, the middle one who enforces the rules, and the youngest who simply wants the thing. The grown-ups are funny because they are real, not because they are foolish.</p>
+    </div>
+    <div class="family" id="family-grid"></div>
+    <p class="hint">Hover to hear them. Tap anyone to open their model sheet.</p>
+  </div>
+</section>
+
+<section class="band band-mist" id="valley">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">The world</p>
+      <h2>The Valley</h2>
+      <p class="lede">A wide, sunlit basin of temple ruins, giant rounded boulders, banana groves and a turquoise lake with a waterfall. The ruins aren’t haunted or magical — they’re a playground. Every carved pillar is a goalpost, every courtyard a runway, every stone wall an air-traffic-control tower.</p>
+    </div>
+    <div class="valley-grid">
+      <div class="mapshot">
+        <img src="img/map.webp" alt="The valley drawn by the children, pinned to the treehouse wall" width="1400" height="783">
+        <div>
+          <h3 style="font-size:1.7rem">The map on the wall</h3>
+          <p class="lede" style="margin-top:10px">The kids drew it and it is wrong in charming ways. The one place on it that nobody has visited is the Far Hill, in the corner, marked with a question mark.</p>
+        </div>
+      </div>
+      <div id="places" style="display:contents"></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="plane">
+  <div class="wrap plane">
+    <img src="img/plane.webp" alt="The family plane — side, three-quarter, top and cabin cutaway" width="1400" height="783">
+    <div>
+      <p class="eyebrow">The plane</p>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.6rem);margin-top:8px">Yellow, red, and always needing something</h2>
+      <p class="lede" style="margin-top:12px">A single-engine propeller plane with a blue prop and a winged-monkey emblem, patched and well-loved. It lives on a dirt strip below the treehouse, under a windsock on a bamboo pole.</p>
+      <ul class="rule-list">
+        <li>Four seats: Maya at the controls, two kids up front, and a back seat that was never designed for Baba.</li>
+        <li>It rattles. Chintu hears it first, every time.</li>
+        <li>The plane could take them anywhere, which is exactly why the show keeps it on the ground.</li>
+        <li>When it does fly, it is the reward — never the premise.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band band-mist" id="episodes">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Season one</p>
+      <h2>Fifty-two games</h2>
+      <p class="lede">Every episode is one game, one drafted grown-up, one small lesson. The Far Hill is visited at 12, half-walked at 26, returned to at 30, sent a postcard at 42 and answered at 52. The question mark never comes off the map.</p>
+      <p class="lede"><strong>Episode 1 plays here.</strong> Put the cursor on its card and the storyboard opens — press play and all 111 panels run with the narration.</p>
+    </div>
+    <div class="epbar">
+      <div class="tabs" id="epTabs"></div>
+      <input id="epSearch" type="search" placeholder="Search episodes — try chai, hill, banana" aria-label="Search episodes">
+    </div>
+    <p id="epCount"></p>
+    <div class="epgrid" id="epGrid"></div>
+  </div>
+</section>
+
+<section class="band" id="play">
+  <div class="wrap">
+    <div class="head playhead">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <p class="eyebrow">Play the Vaanar way</p>
+        <h2>Games for your floor</h2>
+        <p class="lede">Every recurring prop in the show is something a child can make, and every recurring game is something a family can play on the floor. Ten of these come straight out of Episode 1 — the crate cabin, the leaf boarding passes, the cold cup of chai — with the storyboard panel they came from.</p>
+      </div>
+      <div class="playtools">
+        <div class="playchips" id="playChips">
+          <button type="button" class="chip on" data-filter="all">All games</button>
+          <button type="button" class="chip" data-filter="ep1">From Episode 1</button>
+          <button type="button" class="chip" data-filter="valley">Around the valley</button>
+        </div>
+        <button class="btn" id="pickGame" type="button">Pick a game for us</button>
+      </div>
+    </div>
+    <div class="gamegrid" id="games"></div>
+    <div class="props">
+      <img src="img/props.webp" alt="Recurring props from the show" width="1400" height="783">
+      <div>
+        <h3 style="font-size:1.7rem">Everything the games are made of</h3>
+        <p class="lede" style="margin-top:10px">The toy plane · aviator goggles · the red cap, forwards or backwards · the pink bow · Tara’s red scarf sash · Baba’s chai cup · the newspaper · the big spanner · Maya’s gloves · the coconut-oil pot · the wooden ruler · banana leaves as tickets, napkins, invoices and safety cards · bananas as currency · and two crates and a map, which together are anything the kids need them to be.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hill">
+  <img src="img/farhill.webp" alt="The Far Hill seen from over the wing at golden hour" width="1100" height="615">
+  <div class="hill-in">
+    <p class="qmark">?</p>
+    <h2>Nobody has been to the Far Hill</h2>
+    <p>The one place on the map with a question mark. Seen only from a distance, at golden hour, from over the wing. It is the series’ slow-burn mystery, it is answered one episode at a time, and what’s there is not treasure.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h3>The show</h3>
+        <ul>
+          <li>52 × 7-minute episodes</li>
+          <li>2D/3D hybrid animation</li>
+          <li>Ages 4–8, built for co-viewing</li>
+          <li>Two seasons developed</li>
+        </ul>
+      </div>
+      <div>
+        <h3>The valley</h3>
+        <ul>
+          <li>No villain</li>
+          <li>No magic</li>
+          <li>One plane, mostly on the ground</li>
+          <li>One question mark on the map</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Made by</h3>
+        <p>Kayhan Entertainment — an original-IP and animation studio working across Mumbai and Dubai.</p>
+        <p style="margin-top:10px;font-family:'Baloo 2',sans-serif;font-weight:700;color:var(--sun);font-size:1.25rem">Higher Together.</p>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>© Kayhan Entertainment. Vaanar Tales and all characters are original IP.</span>
+      <span>Artwork and text from the Vaanar Tales series bible.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="rail left" id="railLeft" aria-hidden="true"></div>
+<div class="rail right" id="railRight" aria-hidden="true"></div>
+<p class="toast" id="toast" role="status"></p>
+
+
+
+
+<section class="newspage" id="newsPage" hidden aria-label="Vaanar News">
+  <div class="newsbar">
+    <button class="backbtn" id="newsBack" type="button">← Back to the valley</button>
+    <p class="masthead">Vaanar News <small>Despatches from the valley</small></p>
+  </div>
+  <div class="chips" id="newsChips"></div>
+  <div class="newswrap">
+    <div id="newsList"></div>
+    <div id="newsArticle" hidden></div>
+  </div>
+</section>
+
+<section class="gamepage" id="gamePage" hidden aria-label="Vaanar Games">
+  <div class="gamebar">
+    <button class="backbtn" id="gameBack" type="button">← Back to the valley</button>
+    <h2 id="gTitle">Vaanar Games</h2>
+    <div class="levels" id="gLevels" hidden></div>
+    <p class="tally" id="gTally" hidden><b id="gScore">0</b> <span id="gScoreWord">caught</span><span class="bumps" id="gLives">no bumps yet</span><span class="bestlabel" id="gBest"></span></p>
+    <button class="backbtn alt" id="gFinish" type="button" hidden>Finish round</button>
+    <button class="backbtn alt" id="gMenu" type="button" hidden>All games</button>
+  </div>
+
+  <div class="picker" id="gPicker">
+    <button class="pick pick-1" type="button" data-game="catch">
+      <span class="pick-art"><img src="img/char-kapi.webp" alt=""><img src="img/char-bholu.webp" alt=""></span>
+      <strong>Catch the Banana</strong>
+      <span>Bholu keeps dropping his delivery. Catch it in Kapi's crate.</span>
+      <em>Levels 1 · 2 · 3</em>
+    </button>
+    <button class="pick pick-2" type="button" data-game="fly">
+      <span class="pick-art"><img src="img/plane-fly.webp" alt=""></span>
+      <strong>Through the Mountains</strong>
+      <span>Everyone is aboard. Fly the gaps and dodge the exploding bananas.</span>
+      <em>Levels 1 · 2 · 3</em>
+    </button>
+    <button class="pick pick-3" type="button" data-game="dodge">
+      <span class="pick-art"><img src="img/plane-fly.webp" alt=""><img src="img/char-bholu.webp" alt=""></span>
+      <strong>Banana Dodge</strong>
+      <span>Open sky. Dodge Bholu's bananas, collect the boarding-pass leaves.</span>
+      <em>Levels 1 · 2 · 3</em>
+    </button>
+  </div>
+
+  <div class="stagewrap" id="gStage" hidden>
+    <canvas id="gCanvas" width="900" height="560" aria-label="Vaanar Tales game"></canvas>
+    <div class="gcard" id="gStart">
+      <h3 id="gStartTitle">Catch the Banana</h3>
+      <p id="gStartText"></p>
+      <button class="gbig" id="gGo" type="button">Start</button>
+    </div>
+    <div class="gcard" id="gOver" hidden>
+      <h3 id="gOverTitle">Round over</h3>
+      <p id="gOverText"></p>
+      <button class="gbig" id="gAgain" type="button">Play again</button>
+    </div>
+    <p class="crew" id="gCrew"></p>
+  </div>
+
+  <p class="howto" id="gHow">Three small games from the valley. Pick one.</p>
+  <p class="howto" style="margin-top:-24px;font-weight:700;color:#0F4463">Nobody is ever out. Bumps just cost you a moment — play on until you press Finish.</p>
+</section>
+
+<dialog id="sbDialog" aria-label="Storyboard viewer">
+  <div class="sbcard">
+    <button class="closer" id="sbClose" type="button" aria-label="Close">×</button>
+    <div class="sbtop">
+      <span id="sbEp">Episode 1</span>
+      <h3 id="sbTitle">Grounded</h3>
+    </div>
+    <div class="sbstage">
+      <img id="sbImg" alt="">
+      <button class="sbnav prev" id="sbPrev" type="button" aria-label="Previous panel">‹</button>
+      <button class="sbnav next" id="sbNext" type="button" aria-label="Next panel">›</button>
+      <button class="sbbig" id="sbBig" type="button" aria-label="Play the episode with narration">▶</button>
+    </div>
+    <div class="sbbar">
+      <button class="sbplay" id="sbPlay" type="button">▶ Play with narration</button>
+      <span class="sbcount" id="sbCount">Shot 1 / 111</span>
+      <input id="sbRange" type="range" min="0" max="100" step="0.1" value="0" aria-label="Scrub the episode">
+      <span class="sbtime" id="sbTime">0:00 / 0:00</span>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="charDialog" aria-label="Character details">
+  <div class="card">
+    <button class="closer" id="charClose" type="button" aria-label="Close">×</button>
+    <div id="charBody"></div>
+  </div>
+</dialog>
+
+<script src="app.js"></script>
+<script src="games.js"></script>
+<script src="news.js"></script>
+
+</body>
+</html>
