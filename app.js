@@ -86,34 +86,34 @@ const LOCATIONS = [
 
 const ACTIVITIES = [
   /* ---- straight out of Episode 1, "Grounded" ---- */
-  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "img/sb/ep01/p096.webp",
+  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "images/sb/ep01/p096.webp",
     title: "Build the cabin", kit: "Two crates or chairs · a tea towel",
     text: "Two boxes side by side are the cabin. The tea towel goes over one as the tray table. That is the whole set, and once it exists somebody will always be boarding it." },
-  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "img/sb/ep01/p070.webp",
+  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "images/sb/ep01/p070.webp",
     title: "Boarding passes made of leaves", kit: "A handful of leaves or paper scraps",
     text: "One leaf per passenger, handed over at the door. Nobody gets in without one — including whoever is giving them out, who must issue one to themselves out loud." },
-  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "img/sb/ep01/p030.webp",
+  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "images/sb/ep01/p030.webp",
     title: "Passenger One", kit: "One grown-up who was doing something else",
     text: "Pick the nearest adult and make them Passenger One. Passenger One does not choose the seat, the route or the music, and must sit where they are put. This is the entire job." },
-  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "img/sb/ep01/p064.webp",
+  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "images/sb/ep01/p064.webp",
     title: "The safety demonstration", kit: "Nothing · both arms",
     text: "Exits here, here and here. Tray table flat. Seatbelt like this. It has to be done completely seriously, with both arms, and repeated if anybody laughs — which is how you get it done three times." },
-  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "img/sb/ep01/p044.webp",
+  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "images/sb/ep01/p044.webp",
     title: "Say everything as an announcement", kit: "A captain's voice",
     text: "For the length of the flight, nothing is said normally. Dinner is an announcement. Bedtime is an announcement. \"CABIN CREW — PREPARE FOR LANDING\" means put your shoes on." },
-  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "img/sb/ep01/p100.webp",
+  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "images/sb/ep01/p100.webp",
     title: "Somebody is the engine", kit: "The youngest person in the room",
     text: "The engine stands at the front and makes the noise. The engine does not steer, does not stop for questions, and cannot be switched off by anybody except the person who started it." },
-  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "img/sb/ep01/p010.webp",
+  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "images/sb/ep01/p010.webp",
     title: "Find the rattle", kit: "One rattly thing · a hiding place",
     text: "Something in the cabin is rattling. Hide a set of keys or a tin of buttons under a cushion, then send the crew to find it by ear alone. The pilot cannot take off until it is found." },
-  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "img/sb/ep01/p088.webp",
+  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "images/sb/ep01/p088.webp",
     title: "Let the passenger pick the destination", kit: "A drawn map · one stubborn grown-up",
     text: "Draw the map first — your street, the park, the shop, and one place nobody has been. At the end of the flight, the drafted grown-up chooses where you land. They always pick better than you expect." },
-  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "img/sb/ep01/p022.webp",
+  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "images/sb/ep01/p022.webp",
     title: "The cold chai rule", kit: "One hot drink",
     text: "A grown-up starts the game with a full cup. It may not be finished until the plane lands. It will go cold. Everybody learns that this is fine, and the grown-up drinks it anyway." },
-  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "img/sb/ep01/p038.webp",
+  { ep: 1, from: "ep1", source: "Episode 1 · Grounded", shot: "images/sb/ep01/p038.webp",
     title: "Land, then say one thing you saw", kit: "Nothing at all",
     text: "The landing is the quiet bit. Everyone unbuckles, and each person says one thing they saw out of the window. Nobody is allowed to say it was nothing." },
 
@@ -196,7 +196,7 @@ const BLOCKS = [
 
 /* Episodes whose storyboard is online. Add an entry per episode as boards arrive. */
 const BOARDS = {
-  1: { panels: 111, dir: "img/sb/ep01", audio: "audio/ep01.mp3" }
+  1: { panels: 111, dir: "images/sb/ep01", audio: "audio/ep01.mp3" }
 };
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -207,7 +207,7 @@ const familyEl = document.getElementById("family-grid");
 familyEl.innerHTML = CHARACTERS.map((c) => `
   <button class="mate" type="button" data-char="${c.id}" style="--mate:${c.colour}">
     <span class="say">${esc(c.say)}</span>
-    <span class="mate-disc"><img src="img/char-${c.id}.webp" alt="${esc(c.name)}" loading="lazy" width="300" height="520"></span>
+    <span class="mate-disc"><img src="images/char-${c.id}.webp" alt="${esc(c.name)}" loading="lazy" width="300" height="520"></span>
     <span class="mate-name">${esc(c.name)}</span>
     <span class="mate-role">${esc(c.age)}</span>
   </button>`).join("");
@@ -221,7 +221,7 @@ familyEl.addEventListener("click", (e) => {
   const c = CHARACTERS.find((x) => x.id === btn.dataset.char);
   dlgBody.innerHTML = `
     <div class="sheetwrap" style="--mate:${c.colour}">
-      <img class="sheet" src="img/sheet-${c.id}.webp" alt="${esc(c.name)} model sheet" width="1200" height="671">
+      <img class="sheet" src="images/sheet-${c.id}.webp" alt="${esc(c.name)} model sheet" width="1200" height="671">
     </div>
     <div class="sheetcopy">
       <p class="eyebrow">${esc(c.role)}</p>
@@ -239,7 +239,7 @@ dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
 /* ---------- the valley ---------- */
 document.getElementById("places").innerHTML = LOCATIONS.map((l) => `
   <article class="place">
-    <img src="img/${l.img}.webp" alt="${esc(l.name)}" loading="lazy" width="1100" height="615">
+    <img src="images/${l.img}.webp" alt="${esc(l.name)}" loading="lazy" width="1100" height="615">
     <div class="place-copy">
       <h3>${esc(l.name)}</h3>
       <p>${esc(l.text)}</p>
@@ -308,7 +308,7 @@ function render() {
     return `
     <article class="ep${b ? " hasboard" : ""}" data-ep="${n}" style="animation-delay:${Math.min(i, 12) * 22}ms">
       <div class="thumb">
-        <img src="img/ep${String(n).padStart(2, "0")}.webp" alt="Episode ${n}, ${esc(t)}" loading="lazy" width="640" height="272">
+        <img src="images/ep${String(n).padStart(2, "0")}.webp" alt="Episode ${n}, ${esc(t)}" loading="lazy" width="640" height="272">
         ${b ? `<span class="sbtag">Storyboard · ${b.panels} panels</span>` : ""}
       </div>
       <div class="ep-copy">
@@ -499,7 +499,7 @@ HANGERS.forEach((h) => {
   btn.className = "hanger";
   btn.type = "button";
   btn.setAttribute("aria-label", `${h.id} — say something`);
-  btn.innerHTML = `<span class="hopper"><img src="img/char-${h.id}.webp" alt="" width="300" height="520"></span><span class="bubble"></span>`;
+  btn.innerHTML = `<span class="hopper"><img src="images/char-${h.id}.webp" alt="" width="300" height="520"></span><span class="bubble"></span>`;
   const bubble = btn.querySelector(".bubble");
   let i = 0;
   const shake = () => {
@@ -534,7 +534,7 @@ function flyPlane() {
   const ltr = Math.random() < 0.5;                 /* the art faces left, so ltr gets mirrored */
   const el = document.createElement("div");
   el.className = "flyer" + (ltr ? " ltr" : "");
-  el.innerHTML = `<div class="swing"><img src="img/plane-fly.webp" alt="" width="190" height="89"></div>`;
+  el.innerHTML = `<div class="swing"><img src="images/plane-fly.webp" alt="" width="190" height="89"></div>`;
   el.style.top = `${90 + Math.random() * Math.max(120, window.innerHeight * 0.42)}px`;
   document.body.appendChild(el);
 

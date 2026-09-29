@@ -35,13 +35,13 @@
 
   const img = (src) => { const i = new Image(); i.src = src; return i; };
   const ART = {
-    kapi: img("img/char-kapi.webp"),
-    bholu: img("img/char-bholu.webp"),
-    maya: img("img/char-maya.webp"),
-    tara: img("img/char-tara.webp"),
-    chintu: img("img/char-chintu.webp"),
-    baba: img("img/char-baba.webp"),
-    plane: img("img/plane-fly.webp")
+    kapi: img("images/char-kapi.webp"),
+    bholu: img("images/char-bholu.webp"),
+    maya: img("images/char-maya.webp"),
+    tara: img("images/char-tara.webp"),
+    chintu: img("images/char-chintu.webp"),
+    baba: img("images/char-baba.webp"),
+    plane: img("images/plane-fly.webp")
   };
 
   /* ---------- shared drawing ---------- */
@@ -545,7 +545,7 @@
     els.scoreWord.textContent = g.word;
     els.startTitle.textContent = g.title;
     els.startText.textContent = g.blurb;
-    els.crew.innerHTML = g.crew.map((c) => `<img src="img/char-${c}.webp" alt="${c}">`).join("") +
+    els.crew.innerHTML = g.crew.map((c) => `<img src="images/char-${c}.webp" alt="${c}">`).join("") +
       `<span>${g.crew.length > 2 ? "everyone is on board" : "Kapi and Bholu"}</span>`;
     els.levels.innerHTML = g.levels.map((L, i) =>
       `<button type="button" class="lvl${i === S.level ? " on" : ""}" data-lvl="${i}">Level ${L.name}<small>${L.tag}</small></button>`).join("");
